@@ -39,12 +39,12 @@
           -->
           <div class="pub-list">
             <dl class="pub-list__info">
-              <dt class="page-title">총페이지</dt>
-              <dd class="page-data total"></dd>
-              <dt class="page-title">완료</dt>
-              <dd class="page-data finish"></dd>
-              <dt class="page-title">진척률</dt>
-              <dd class="page-data percent"></dd>
+              <dt class="pub-list__title">총페이지</dt>
+              <dd class="pub-list__data total"></dd>
+              <dt class="pub-list__title">완료</dt>
+              <dd class="pub-list__data finish"></dd>
+              <dt class="pub-list__title">진척률</dt>
+              <dd class="pub-list__data percent"></dd>
             </dl>
 
             <!-- 관리자 -->
@@ -1017,12 +1017,12 @@
         let $duple = $(".pub-list").find("tr.data-tr .duple").length; //중복 갯수
         let $percent = Math.floor((($finish + $delete + $duple) / $total) * 100); // 진척률
 
-        $(".pub-list").find(".page-data.total").text($total);
+        $(".pub-list").find(".pub-list__data.total").text($total);
         // $('.pub-list').find('.page_finish').text($finish);
         $(".pub-list")
-          .find(".page-data.finish")
+          .find(".pub-list__data.finish")
           .text($finish + $delete + $duple);
-        $(".pub-list").find(".page-data.percent").text(`${$percent} %`);
+        $(".pub-list").find(".pub-list__data.percent").text(`${$percent} %`);
       });
 
       $(".pub-table tr").each(function () {
